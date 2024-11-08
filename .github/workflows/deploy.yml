@@ -10,7 +10,7 @@ jobs:
   dockerbuild:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3  # Update to v3, as v4 may not be valid
       - name: Build The Docker Image
         run: docker build . --file Dockerfile --tag workflow-test:$(date +%s)
 
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2  # Update to v2, as v4 may not be valid
         with:
           python-version: '3.9'
       - name: Install dependencies
